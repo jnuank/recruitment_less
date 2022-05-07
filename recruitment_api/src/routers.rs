@@ -1,20 +1,19 @@
-use crate::domain::candidate::Candidates;
 use std::collections::LinkedList;
 
 use crate::domain::candidate::Candidate;
 use axum::response::IntoResponse;
 use axum::Json;
-use axum::{Router, routing::{get, Route}};
+use axum::{Router, routing::{get}};
 use hyper::StatusCode;
 
-use crate::domain;
 use crate::domain::selectionStatus::{SelectionProcessStatus, SelectionStatus};
 
 
 
 pub fn router() -> Router {
-     Router::new().route("/ping", get(|| async {"ping"}))
-                    .route("/candidate", get( get_candidate))
+    Router::new()
+        .route("/ping", get(|| async {"ping"}))
+        .route("/candidate", get( get_candidate))
 }
 
 async fn get_candidate() -> impl IntoResponse {
