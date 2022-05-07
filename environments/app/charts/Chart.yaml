@@ -1,0 +1,4 @@
+apiVersion: v1
+description: recruitment-api with helm
+name: recruitment-api
+version: 0.1.0
