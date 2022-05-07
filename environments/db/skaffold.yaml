@@ -1,0 +1,19 @@
+apiVersion: skaffold/v2beta28
+kind: Config
+build:
+  artifacts: 
+  - image: 839217260075.dkr.ecr.ap-northeast-1.amazonaws.com/recruitment/recruitment-db
+    context: .
+    docker:
+      dockerfile: ./Dockerfile
+  local:
+    useBuildkit: true
+deploy:
+  helm:
+    releases:
+    - name: recruitment-db
+      chartPath: charts
+      valuesFiles:
+      - '{{ .VALUE_FILE }}'
+      artifactOverrides:
+        image: 839217260075.dkr.ecr.ap-northeast-1.amazonaws.com/recruitment/recruitment-db
