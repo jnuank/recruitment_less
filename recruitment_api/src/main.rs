@@ -1,7 +1,5 @@
 mod routers;
 
-mod domain;
-
 #[tokio::main]
 async fn main() {
     let app = routers::router();

@@ -13,3 +13,14 @@ tower = "0.4.12"
 chrono = "0.4"
 serde = { version = "^1.0.101", features = ["derive"] }
 serde_json = "^1.0.41"
+mockall = "0.11.1"
+mockall_double = "0.3.0"
+domain = { path = "./domain" }
+
+[workspace]
+
+members = [
+    "usecase",
+    "domain",
+    "gateway"
+]
