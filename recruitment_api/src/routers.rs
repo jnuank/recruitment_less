@@ -7,9 +7,6 @@ use domain::candidate::Candidate;
 use domain::selection_status::{SelectionProcessStatus, SelectionStatus};
 use hyper::StatusCode;
 
-
-
-
 pub fn router() -> Router {
     Router::new()
         .route("/ping", get(|| async {"ping"}))
